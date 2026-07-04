@@ -1,0 +1,21 @@
+.DS_Store
+.env
+.env.*
+*.local
+
+# Secrets and credentials
+credentials.json
+secrets.*
+
+# Build artifacts
+.pio/
+build/
+dist/
+sdkconfig.old
+managed_components/
+
+# Local-only resources (vendor firmware, zips, PDFs, large binaries — not in git)
+resources/**
+!resources/README.md
+
+scritpts/
