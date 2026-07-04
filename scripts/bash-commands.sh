@@ -22,14 +22,26 @@ git remote -v
 
 
 # =============================================================================
-# Git — first commit and push
+# Git — first commit and push (when local and GitHub both have initial commits)
 # =============================================================================
 
-git pull origin main --allow-unrelated-histories
+# If push is rejected (non-fast-forward): GitHub has a starter commit, local has
+# a different root commit. Merge unrelated histories, then push:
+git pull origin main --allow-unrelated-histories --no-rebase
+# Resolve conflicts (keep local README.md and .gitignore), then:
+git add README.md .gitignore
+git commit -m "Merge GitHub initial commit with local zensoria structure."
+git push -u origin main
+
+
+# =============================================================================
+# Git — first commit and push (fresh local repo, empty GitHub)
+# =============================================================================
+
+git pull origin main --allow-unrelated-histories --no-rebase
 
 git add .
 git status
-# resources/ is gitignored (except resources/README.md) — verify before commit:
 git status --ignored | grep resources
 
 git commit -m "$(cat <<'EOF'
