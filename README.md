@@ -29,7 +29,7 @@ zensoria/
 
 ### `agentix/`
 
-Entry point for AI-assisted work on this project.
+Entry point for AI-assisted work on this project. **All agent instructions live here**, except the blog agent in `web_documentation/`.
 
 - [`agentix/agent.md`](agentix/agent.md) — project router and path index
 - [`agentix/README.md`](agentix/README.md) — environment context (hardware, tone)
@@ -53,6 +53,8 @@ Supported boards include **ESP32-C6-GEEK** and **ESP32-S3-RLCD** (Waveshare).
 ### `web_documentation/`
 
 Reference content curated for publication on the project website (microcontrollers, openHAB, sensors).
+
+- [`web_documentation/agent.md`](web_documentation/agent.md) — blog documentation agent (only subfolder with its own agent file)
 
 ### `resources/` (local only)
 

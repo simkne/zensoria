@@ -68,6 +68,11 @@ git switch dev
 # Switch back to main
 git switch main
 
+# Merge main into dev (when dev was created from empty GitHub starter commit)
+git switch dev
+git merge main
+git push origin dev
+
 # Create dev from current branch (one-time, if not created yet)
 # git switch -c dev
 # git push -u origin dev
@@ -83,6 +88,14 @@ git add path/to/file
 git commit -m "message"
 git push
 git pull origin main
+
+# resources/ is gitignored — pull does NOT delete or overwrite it.
+# Before commit, confirm nothing under resources/ is staged (except README.md):
+git status
+git check-ignore -v resources/firmware resources/README.md
+
+# NEVER run this in repo root unless you intend to delete untracked local files:
+# git clean -fd
 
 
 # =============================================================================
